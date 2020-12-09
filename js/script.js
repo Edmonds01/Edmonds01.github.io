@@ -202,7 +202,7 @@
 
         // start searching
         var doSearch = searchFunc,
-            search_data_path = 'search.xml',
+            search_data_path = 'source/xml/search.xml',
             search_input = document.querySelector('#search_input'),
             search_result = document.querySelector('#search_result');
 
