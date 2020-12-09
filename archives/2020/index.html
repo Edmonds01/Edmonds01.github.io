@@ -103,7 +103,13 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
+           <script type="text/javascript">
+	var targetProtocol = "https:";
+	if (window.location.protocol != targetProtocol)
+		window.location.href = targetProtocol +
+		window.location.href.substring(window.location.protocol.length);
+</script>
+<style>
     .post-hover:hover {
         box-shadow: inset 0 0 100px #000;
         transition: box-shadow .2s;
