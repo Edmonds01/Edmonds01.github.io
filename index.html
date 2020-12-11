@@ -107,10 +107,6 @@
     var head = document.getElementsByTagName('head')[0];
     head.innerHTML += ' <link rel="icon" href="../images/f.png" type="image/x-icon">  ';
     head.innerHTML += ' <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/> ';
-	var targetProtocol = "https:";
-	if (window.location.protocol != targetProtocol)
-		window.location.href = targetProtocol +
-		window.location.href.substring(window.location.protocol.length);
 </script>
 <style>
     .post-hover:hover {
