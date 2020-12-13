@@ -107,103 +107,58 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <!--翻页-->
-<style>
-    .header-box {
-        height: 370px;
-        filter: blur(10px);
-        background-size: cover;
-        background-color: lightsteelblue;
-    }
-
-    .post-box {
+          <style>
+    .content-box {
+        min-height: 93vh;
         padding: 15px;
-        padding-top: 60px;
-        min-height: 80vh;
-        margin-top: -200px;
-        border-radius: 4px;
-        background-color: rgba(255,255,255,.8);
+        background-color: rgba(255, 255, 255, .8);
     }
 
-    .post-avatar {
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-    }
-
-    .flow-chart {
-        text-align: center;
-    }
-
-    img[alt="post-cover"] {
-        display: none;
+    .sns-container li a{
+        color: black;
     }
 </style>
-<header>
-    <div id="header_box" class="header-box"></div>
-</header>
-<section>
-    <div class="container post-box">
-        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
-            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
-                <strong>desk</strong>
-            </h1>
-            
-            <div class="is-flex align-center">
-                <img class="post-avatar" src="https://avatars3.githubusercontent.com/u/60842872?s=460&u=8ad875125c0b003bb2222bbae66b148d79127021&v=4">
-                <span style="padding:0 10px;"> <span class="sub-title">By</span> Edmonds</span>
-                <span class="post-date sub-title">at: 2020-12-11</span>
+
+<div class="container">
+    <div class="content-box full-width is-flex justify-center">
+        <div class="columns">
+            <div class="column is-5">
+                <img class="avatar" src="https://avatars3.githubusercontent.com/u/60842872?s=460&u=8ad875125c0b003bb2222bbae66b148d79127021&v=4">
             </div>
-            
-        </div>
-        <div class="content" style="overflow: auto">
-            <p> j今天我回家了撒旦撒旦,sadjasid撒大沙发很少看见光辉的时刻价格核算会计看见的身份获得较高的反抗军工行打火机</p>
+            <div class="column">
+                <div class="content">
+                    <h1>
+                        About
+                        <br>
+                        <strong>Edmonds</strong>
+                    </h1>
+                    <p class="is-flex align-center"><i class="fa fa-location-arrow" style="margin-right: 5px;"></i> China</p>
+                    <p><strong>E-mail:&nbsp;&nbsp;</strong>fengt4554@gmail.com</p>
+                    <p><strong>QQ:&nbsp;&nbsp;</strong>2916706953</p>
+                    <p>这个世界，就是靠梦想推动前进的。我一定要按照的我的意愿，去过完这一生。</p>
 
-        </div>
-        <div class="post-reply">
-            
-                <!-- 来必力City版安装代码 -->
-                <div id="lv-container" data-id="city" data-uid="MTAyMC81MjE2Mi8yODY0Mg">
-                    <script type="text/javascript">
-                        (function(d, s) {
-                            var j, e = d.getElementsByTagName(s)[0];
-
-                            if (typeof LivereTower === 'function') { return; }
-
-                            j = d.createElement(s);
-                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                            j.async = true;
-
-                            e.parentNode.insertBefore(j, e);
-                        })(document, 'script');
-                    </script>
-                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
                 </div>
-                <!-- City版安装代码已完成 -->
-            
-            
+                <div>
+                    <ul class="sns-container is-flex">
+                        
+
+                        
+
+                        
+
+                        
+
+                        
+
+                        
+
+                        
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-</section>
-<script>
-    // 获取第一张图, 用以当封面背景图
-    var img = document.querySelectorAll('img')[1]
-
-    if (img) {
-        var header_box = document.querySelector('#header_box')
-        header_box.style.backgroundImage = 'url('+ img.src +')'
-    }
-</script>
-
-<!-- for code block highlight --> 
-<!-- theme.block_highlight -->
-<!-- we do not guarantee the char sequences spell right, usr himself do it -->
-
-<link rel="stylesheet" href="/css/highlight_rainbow.css">
-
-<script src="/js/highlight.min.js"></script>
-<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
-
+</div>
       </div>
   </div>
   <style>
