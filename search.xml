@@ -37,10 +37,16 @@
         <content type="html"><![CDATA[<p>what is your name????????????</p>]]></content>
       
       
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
       
         <tags>
             
-            <tag> t3 </tag>
+            <tag> JAVA </tag>
             
         </tags>
       
