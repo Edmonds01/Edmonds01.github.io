@@ -144,6 +144,7 @@
 <header>
     <div id="header_box" class="header-box"></div>
 </header>
+      <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <section>
     <div class="container post-box">
         <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
@@ -169,26 +170,14 @@
 
         </div>
         <div class="post-reply">
-            
-                <!-- 来必力City版安装代码 -->
-                <div id="lv-container" data-id="city" data-uid="MTAyMC81MjE2Mi8yODY0Mg">
-                    <script type="text/javascript">
-                        alert("sssssssssssss");
-                        (function(d, s) {
-                            var j, e = d.getElementsByTagName(s)[0];
-
-                            if (typeof LivereTower === 'function') { return; }
-
-                            j = d.createElement(s);
-                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                            j.async = true;
-
-                            e.parentNode.insertBefore(j, e);
-                        })(document, 'script');
-                    </script>
-                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-                </div>
-                <!-- City版安装代码已完成 -->
+            <div id="vcomments"></div>
+            <script>
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'WXdnbmPiuqhI8Tt6f19YuLXv-gzGzoHsz',
+                    appKey: 'nTmXrs6jzYUdl25MaUBRbUjv'
+                })
+            </script>
             
             
         </div>
