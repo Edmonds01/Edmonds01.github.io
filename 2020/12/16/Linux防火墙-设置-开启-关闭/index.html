@@ -15,14 +15,19 @@
   </script>
 
   
-  <title>Archives: 2020 | Edmonds</title>
+  <title>Linux防火墙(设置)开启/关闭 | Edmonds</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Edmonds">
-<meta property="og:url" content="http://example.com/archives/2020/index.html">
+  <meta name="description" content="在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令1.查看防火墙状态　　systemctrl status firewalld 2.关闭防火墙　　systemc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux防火墙(设置)开启&#x2F;关闭">
+<meta property="og:url" content="http://example.com/2020/12/16/Linux%E9%98%B2%E7%81%AB%E5%A2%99-%E8%AE%BE%E7%BD%AE-%E5%BC%80%E5%90%AF-%E5%85%B3%E9%97%AD/index.html">
 <meta property="og:site_name" content="Edmonds">
+<meta property="og:description" content="在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令1.查看防火墙状态　　systemctrl status firewalld 2.关闭防火墙　　systemc">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-16T14:29:40.000Z">
+<meta property="article:modified_time" content="2020-12-16T14:58:50.635Z">
 <meta property="article:author" content="Edmonds">
+<meta property="article:tag" content="Linux,Shell">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Edmonds" type="application/atom+xml">
@@ -103,247 +108,106 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-           <script type="text/javascript">
-    var head = document.getElementsByTagName('head')[0];
-    head.innerHTML += ' <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/> ';
-</script>
+          <!--博文页面-->
+
 <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
-
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
         background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    .post-content-text {
-        color: #f1f1f1!important;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 
-    .primary-container .post-hover {
-        background: black;
+    .flow-chart {
+        text-align: center;
     }
 
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
+    img[alt="post-cover"] {
+        display: none;
     }
-
 </style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2020/12/16/Git设置代理/">
-            <div class="full-height post-hover"
-                 style="
-                         background-image: url('');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            Git设置代理
-                        </h1>
-                        <div>
-                        
-                            `
-                                <span class="tag is-post-tag">Git</span>
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            
-                        </p>
-                        <p class="date text-shadow">2020-12-16</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+      <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>Linux防火墙(设置)开启/关闭</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/55c66775e004e09321e8e30d20d94b73_1.jpg">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Edmonds</span>
+                <span class="post-date sub-title">at: 2020-12-16</span>
             </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
             
-                
-<a class="post-hover" href="/2020/12/16/Linux防火墙-设置-开启-关闭/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Linux防火墙(设置)开启/关闭
-            </h3>
-            
-            
-            <span class="tag is-post-tag">Linux,Shell</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开..
-            </p>
-            <p class="date text-shadow is-marginless">2020-12-16</p>
-        </div>
-    </div>
-</a>
-            
-            
-                
-<a class="post-hover" href="/2020/12/15/MarkDown简单使用/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('https://uploademonds.oss-cn-beijing.aliyuncs.com/image/content/markdown/1.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                MarkDown简单使用
-            </h3>
-            
-            
-            <span class="tag is-post-tag">MarkDown</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Markdown 是目前互联网上最流行的写作语言，它使用一些简单的符号（* / ` &gt; [..
-            </p>
-            <p class="date text-shadow is-marginless">2020-12-15</p>
-        </div>
-    </div>
-</a>
+                <div>
+                    
+                         <a class="tag is-post-tag" href="/tags/Linux-Shell/">Linux,Shell</a>
+                    
+                </div>
             
         </div>
-    </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2020/12/16/Linux防火墙-设置-开启-关闭/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                Linux防火墙(设置)开启/关闭
-            </h3>
-            
-            
-            <span class="tag is-post-tag">Linux,Shell</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开..
-            </p>
-            <p class="date text-shadow is-marginless">2020-12-16</p>
-        </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2020/12/15/MarkDown简单使用/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('https://uploademonds.oss-cn-beijing.aliyuncs.com/image/content/markdown/1.png')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                MarkDown简单使用
-            </h3>
-            
-            
-            <span class="tag is-post-tag">MarkDown</span>
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Markdown 是目前互联网上最流行的写作语言，它使用一些简单的符号（* / ` &gt; [..
-            </p>
-            <p class="date text-shadow is-marginless">2020-12-15</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
-</div>
+        <div class="content" style="overflow: auto">
+            <h4 id="在旧版本的CentOS中，是使用-iptables-命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。-使用firewall-cmd命令添加规则-下面来说下firewall操作命令"><a href="#在旧版本的CentOS中，是使用-iptables-命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。-使用firewall-cmd命令添加规则-下面来说下firewall操作命令" class="headerlink" title="在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令"></a><strong>在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令</strong></h4><h5 id="1-查看防火墙状态"><a href="#1-查看防火墙状态" class="headerlink" title="1.查看防火墙状态"></a><strong>1.查看防火墙状态</strong></h5><p>　　systemctrl status firewalld</p>
+<h5 id="2-关闭防火墙"><a href="#2-关闭防火墙" class="headerlink" title="2.关闭防火墙"></a><strong>2.关闭防火墙</strong></h5><p>　　systemctl stop firewalld</p>
+<h5 id="3-打开防火墙"><a href="#3-打开防火墙" class="headerlink" title="3.打开防火墙"></a><strong>3.打开防火墙</strong></h5><p>　　systemctl start firewalld</p>
+<h5 id="4-永久开放某个端口"><a href="#4-永久开放某个端口" class="headerlink" title="4.永久开放某个端口"></a><strong>4.永久开放某个端口</strong></h5><p>　　firewall-cmd –zone=public –add-port=6379/tcp –permanent</p>
+<p>　　firewall-cmd –reload(重新载入)</p>
+<h5 id="5-永久关闭某个端口"><a href="#5-永久关闭某个端口" class="headerlink" title="5.永久关闭某个端口"></a><strong>5.永久关闭某个端口</strong></h5><p>　　firewall-cmd –remove-port=6379/tcp –permanent</p>
+<p>　　firewall-cmd –reload(重新载入)</p>
 
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/12/16/Linux防火墙-设置-开启-关闭/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Linux防火墙(设置)开启/关闭</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">Linux,Shell</span>
-                                            
-                                        </p>
-                                        <p>
-                                            在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令1.查看防火墙状态　　systemctrl status fire..
-                                        </p>
-                                        <p>2020-12-16</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2020/12/15/MarkDown简单使用/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                    <div class="column is-4-desktop is-5-tablet post-avatar is-hidden-mobile"
-                                         style="margin: 10px; background-size: cover;background-image: url('https://uploademonds.oss-cn-beijing.aliyuncs.com/image/content/markdown/1.png')">
-                                    </div>
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>MarkDown简单使用</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">MarkDown</span>
-                                            
-                                        </p>
-                                        <p>
-                                            Markdown 是目前互联网上最流行的写作语言，它使用一些简单的符号（* / ` &gt; [] () #）来标记文本格式，其简洁的语法、优美的格式以及强大的软件支持深受广大网友的喜爱。一个样式可以有多种写法,Markdown同时也支持HTML标签写法,博主只按照自己的习惯列举的几个常用简单写法,不同编译器可能呈现不同的效果,下面以Typora编写效果..
-                                        </p>
-                                        <p>2020-12-15</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                </nav>
-            </section>
+        </div>
+        <div class="post-reply">
+            <div id="vcomments"></div>
+            <script>
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'WXdnbmPiuqhI8Tt6f19YuLXv-gzGzoHsz',
+                    appKey: 'nTmXrs6jzYUdl25MaUBRbUjv',
+                    avatar: ''
+                })
+            </script>
+            
             
         </div>
     </div>
-</div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
 
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
+
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
       </div>
   </div>
   <style>
