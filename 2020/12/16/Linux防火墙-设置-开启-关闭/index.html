@@ -17,15 +17,15 @@
   
   <title>Linux防火墙(设置)开启/关闭 | Edmonds</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令1.查看防火墙状态　　systemctrl status firewalld 2.关闭防火墙　　systemc">
+  <meta name="description" content="在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令    1.查看防火墙状态  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux防火墙(设置)开启&#x2F;关闭">
 <meta property="og:url" content="http://example.com/2020/12/16/Linux%E9%98%B2%E7%81%AB%E5%A2%99-%E8%AE%BE%E7%BD%AE-%E5%BC%80%E5%90%AF-%E5%85%B3%E9%97%AD/index.html">
 <meta property="og:site_name" content="Edmonds">
-<meta property="og:description" content="在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令1.查看防火墙状态　　systemctrl status firewalld 2.关闭防火墙　　systemc">
+<meta property="og:description" content="在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令    1.查看防火墙状态  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbs">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-16T14:29:40.000Z">
-<meta property="article:modified_time" content="2020-12-16T15:06:52.290Z">
+<meta property="article:modified_time" content="2020-12-17T12:34:43.101Z">
 <meta property="article:author" content="Edmonds">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -166,13 +166,40 @@
             
         </div>
         <div class="content" style="overflow: auto">
-            <h4 id="在旧版本的CentOS中，是使用-iptables-命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。-使用firewall-cmd命令添加规则-下面来说下firewall操作命令"><a href="#在旧版本的CentOS中，是使用-iptables-命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。-使用firewall-cmd命令添加规则-下面来说下firewall操作命令" class="headerlink" title="在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令"></a><strong>在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令</strong></h4><h5 id="1-查看防火墙状态"><a href="#1-查看防火墙状态" class="headerlink" title="1.查看防火墙状态"></a><strong>1.查看防火墙状态</strong></h5><p>　　systemctrl status firewalld</p>
-<h5 id="2-关闭防火墙"><a href="#2-关闭防火墙" class="headerlink" title="2.关闭防火墙"></a><strong>2.关闭防火墙</strong></h5><p>　　systemctl stop firewalld</p>
-<h5 id="3-打开防火墙"><a href="#3-打开防火墙" class="headerlink" title="3.打开防火墙"></a><strong>3.打开防火墙</strong></h5><p>　　systemctl start firewalld</p>
-<h5 id="4-永久开放某个端口"><a href="#4-永久开放某个端口" class="headerlink" title="4.永久开放某个端口"></a><strong>4.永久开放某个端口</strong></h5><p>　　firewall-cmd –zone=public –add-port=6379/tcp –permanent</p>
-<p>　　firewall-cmd –reload(重新载入)</p>
-<h5 id="5-永久关闭某个端口"><a href="#5-永久关闭某个端口" class="headerlink" title="5.永久关闭某个端口"></a><strong>5.永久关闭某个端口</strong></h5><p>　　firewall-cmd –remove-port=6379/tcp –permanent</p>
-<p>　　firewall-cmd –reload(重新载入)</p>
+            <h4 id="在旧版本的CentOS中，是使用-iptables-命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。-使用firewall-cmd命令添加规则-下面来说下firewall操作命令"><a href="#在旧版本的CentOS中，是使用-iptables-命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。-使用firewall-cmd命令添加规则-下面来说下firewall操作命令" class="headerlink" title="在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令"></a><strong>在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令</strong></h4><br/>
+
+<br/>
+
+<h5 id="1-查看防火墙状态"><a href="#1-查看防火墙状态" class="headerlink" title="1.查看防火墙状态"></a><strong>1.查看防火墙状态</strong></h5><br/>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;systemctrl status firewalld</p>
+<br/>
+
+<h5 id="2-关闭防火墙"><a href="#2-关闭防火墙" class="headerlink" title="2.关闭防火墙"></a><strong>2.关闭防火墙</strong></h5><br/>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;systemctl stop firewalld</p>
+<br/>
+
+<h5 id="3-打开防火墙"><a href="#3-打开防火墙" class="headerlink" title="3.打开防火墙"></a><strong>3.打开防火墙</strong></h5><br/>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;systemctl start firewalld</p>
+<br/>
+
+<h5 id="4-永久开放某个端口"><a href="#4-永久开放某个端口" class="headerlink" title="4.永久开放某个端口"></a><strong>4.永久开放某个端口</strong></h5><br/>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firewall-cmd –zone=public –add-port=6379/tcp –permanent</p>
+<br/>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firewall-cmd –reload(重新载入)</p>
+ <br/>
+
+<h5 id="5-永久关闭某个端口"><a href="#5-永久关闭某个端口" class="headerlink" title="5.永久关闭某个端口"></a><strong>5.永久关闭某个端口</strong></h5><br/>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firewall-cmd –remove-port=6379/tcp –permanent</p>
+<br/>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firewall-cmd –reload(重新载入)</p>
+<p><br/><br/></p>
 
         </div>
         <div class="post-reply">
