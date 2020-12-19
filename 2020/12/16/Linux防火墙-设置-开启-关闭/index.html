@@ -144,7 +144,7 @@
     }
 </style>
 <header>
-    <div id="header_box" class="header-box"></div>
+    <div id="header_box" class="header-box" style="background-size: 100% 100%;background-repeat: no-repeat;"></div>
 </header>
       <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <section>
@@ -226,7 +226,7 @@
 
     if (img) {
         var header_box = document.querySelector('#header_box')
-        // header_box.style.backgroundImage = 'url('+ img.src +')'
+        header_box.style.backgroundImage = 'url('+ img.src +')'
     }
 </script>
 
