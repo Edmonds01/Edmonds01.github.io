@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/content/redis/2.png">
 <meta property="og:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/content/redis/3.png">
 <meta property="article:published_time" content="2020-12-28T01:49:40.000Z">
-<meta property="article:modified_time" content="2020-12-30T01:04:25.611Z">
+<meta property="article:modified_time" content="2020-12-30T03:07:01.032Z">
 <meta property="article:author" content="Edmonds">
 <meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
@@ -252,9 +252,7 @@
 <h6 id="nbsp-nbsp-nbsp-4-进入命令行"><a href="#nbsp-nbsp-nbsp-4-进入命令行" class="headerlink" title="&nbsp;&nbsp;&nbsp;4.进入命令行"></a>&nbsp;<strong>&nbsp;&nbsp;4.进入命令行</strong></h6><br/>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;(1)根目录：src/redis-cli</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;auth 密码(有密码使用)</p>
+<h6 id=""><a href="#" class="headerlink" title=""></a><br/></h6><p>&nbsp;&nbsp;&nbsp;&nbsp;auth 密码(有密码使用)</p>
 <br/>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;(2).redis-cli -h IP地址 -p 6379 -a 密码(使用这种方式前提,redis-cli在/usr/local/bin目录下)</p>
@@ -262,54 +260,60 @@
 
 <h5 id="三-设为服务"><a href="#三-设为服务" class="headerlink" title="三.设为服务"></a><strong>三.设为服务</strong></h5><br/>
 
-<h6 id="nbsp-nbsp-nbsp-1-在-etc-systemd-system目录下创建redis-service文件-并编辑如下"><a href="#nbsp-nbsp-nbsp-1-在-etc-systemd-system目录下创建redis-service文件-并编辑如下" class="headerlink" title="&nbsp;&nbsp;&nbsp;1.在/etc/systemd/system目录下创建redis.service文件,并编辑如下"></a><strong>&nbsp;&nbsp;&nbsp;1.在/etc/systemd/system目录下创建redis.service文件,并编辑如下</strong></h6><br/>
+<h6 id="nbsp-nbsp-nbsp-1-cd-usr-lib-systemd-system"><a href="#nbsp-nbsp-nbsp-1-cd-usr-lib-systemd-system" class="headerlink" title="&nbsp;&nbsp;&nbsp;1.cd  /usr/lib/systemd/system"></a><strong>&nbsp;&nbsp;&nbsp;1.cd  /usr/lib/systemd/system</strong></h6><br/>
+
+<h6 id="nbsp-nbsp-nbsp-2-touch-redis-service-添加以下内容"><a href="#nbsp-nbsp-nbsp-2-touch-redis-service-添加以下内容" class="headerlink" title="&nbsp;&nbsp;&nbsp;2.touch redis.service,添加以下内容"></a><strong>&nbsp;&nbsp;&nbsp;2.touch redis.service,添加以下内容</strong></h6><br/>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;[Unit]</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Description=redis-server</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Description=Redis Server</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;After=network.target</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;[Service]</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Type=forking</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;ExecStart=/usr/local/redis/bin/redis-server /usr/local/redis/bin/redis.conf</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;PrivateTmp=true</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;PIDFile=/var/run/redis_6379.pid</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;ExecStart=/usr/java/redis/redis-6.0.9/src/redis-server /usr/java/redis/redis-6.0.9/redis.conf</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;ExecStop=/usr/local/bin/redis-cli -a passwd shutdown</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;ExecReload=/bin/kill -s HUP $MAINPID</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;[Install]</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;WantedBy=multi-user.target</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;WantedBy=mutli-user.target</p>
 <br/>
 
 <br/>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;ExecStart：换成你的路径</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;备注：ExecStart和ExecStop换成你的路径</p>
 <p>​    <br/></p>
-<h6 id="nbsp-nbsp-nbsp-2-重新载入-systemctl-并启动服务"><a href="#nbsp-nbsp-nbsp-2-重新载入-systemctl-并启动服务" class="headerlink" title="&nbsp;&nbsp;&nbsp;2.重新载入 systemctl 并启动服务"></a><strong>&nbsp;&nbsp;&nbsp;2.重新载入 systemctl 并启动服务</strong></h6><br/>
+<h6 id="nbsp-nbsp-nbsp-nbsp-3-创建软连接"><a href="#nbsp-nbsp-nbsp-nbsp-3-创建软连接" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;3.创建软连接"></a><strong>&nbsp;&nbsp;&nbsp;&nbsp;3.创建软连接</strong></h6><p>​    <br/></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;ln -s <code>pwd</code>/redis.service /etc/systemd/system/multi-user.target.wants</p>
+<p>​    <br/></p>
+<h6 id="nbsp-nbsp-nbsp-4-重新载入-systemctl-并启动服务"><a href="#nbsp-nbsp-nbsp-4-重新载入-systemctl-并启动服务" class="headerlink" title="&nbsp;&nbsp;&nbsp;4.重新载入 systemctl 并启动服务"></a><strong>&nbsp;&nbsp;&nbsp;4.重新载入 systemctl 并启动服务</strong></h6><br/>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;systemctl daemon-reload</p>
 <br/>
 
-<h6 id="nbsp-nbsp-nbsp-3-启动服务"><a href="#nbsp-nbsp-nbsp-3-启动服务" class="headerlink" title="&nbsp;&nbsp;&nbsp;3.启动服务"></a><strong>&nbsp;&nbsp;&nbsp;3.启动服务</strong></h6><br/>
+<h6 id="nbsp-nbsp-nbsp-5-启动服务"><a href="#nbsp-nbsp-nbsp-5-启动服务" class="headerlink" title="&nbsp;&nbsp;&nbsp;5.启动服务"></a><strong>&nbsp;&nbsp;&nbsp;5.启动服务</strong></h6><br/>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;systemctl start redis.service</p>
 <br/>
 
-<h6 id="nbsp-nbsp-nbsp-4-关闭服务"><a href="#nbsp-nbsp-nbsp-4-关闭服务" class="headerlink" title="&nbsp;&nbsp;&nbsp;4.关闭服务"></a><strong>&nbsp;&nbsp;&nbsp;4.关闭服务</strong></h6><br/>
+<h6 id="nbsp-nbsp-nbsp-6-关闭服务"><a href="#nbsp-nbsp-nbsp-6-关闭服务" class="headerlink" title="&nbsp;&nbsp;&nbsp;6.关闭服务"></a><strong>&nbsp;&nbsp;&nbsp;6.关闭服务</strong></h6><br/>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;systemctl stop redis.service</p>
 <br/>
 
-<h6 id="nbsp-nbsp-nbsp-5-重启服务"><a href="#nbsp-nbsp-nbsp-5-重启服务" class="headerlink" title="&nbsp;&nbsp;&nbsp;5.重启服务"></a><strong>&nbsp;&nbsp;&nbsp;5.重启服务</strong></h6><br/>
+<h6 id="nbsp-nbsp-nbsp-7-重启服务"><a href="#nbsp-nbsp-nbsp-7-重启服务" class="headerlink" title="&nbsp;&nbsp;&nbsp;7.重启服务"></a><strong>&nbsp;&nbsp;&nbsp;7.重启服务</strong></h6><br/>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;systemctl restart redis.service</p>
 <br/>
 
-<h6 id="nbsp-nbsp-nbsp-6-查看服务状态"><a href="#nbsp-nbsp-nbsp-6-查看服务状态" class="headerlink" title="&nbsp;&nbsp;&nbsp;6.查看服务状态"></a>&nbsp;&nbsp;<strong>&nbsp;6.查看服务状态</strong></h6><br/>
+<h6 id="nbsp-nbsp-nbsp-8-查看服务状态"><a href="#nbsp-nbsp-nbsp-8-查看服务状态" class="headerlink" title="&nbsp;&nbsp;&nbsp;8.查看服务状态"></a>&nbsp;&nbsp;<strong>&nbsp;8.查看服务状态</strong></h6><br/>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;systemctl status redis.service</p>
 <br/>
 
-<h6 id="nbsp-nbsp-nbsp-7-设置开机启动"><a href="#nbsp-nbsp-nbsp-7-设置开机启动" class="headerlink" title="&nbsp;&nbsp;&nbsp;7.设置开机启动"></a><strong>&nbsp;&nbsp;&nbsp;7.设置开机启动</strong></h6><br/>
+<h6 id="nbsp-nbsp-nbsp-9-设置开机启动"><a href="#nbsp-nbsp-nbsp-9-设置开机启动" class="headerlink" title="&nbsp;&nbsp;&nbsp;9.设置开机启动"></a><strong>&nbsp;&nbsp;&nbsp;9.设置开机启动</strong></h6><br/>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;systemctl enable redis.service</p>
 <br/>
 
-<h6 id="nbsp-nbsp-nbsp-8-停止开机启动"><a href="#nbsp-nbsp-nbsp-8-停止开机启动" class="headerlink" title="&nbsp;&nbsp;&nbsp;8.停止开机启动"></a><strong>&nbsp;&nbsp;&nbsp;8.停止开机启动</strong></h6><br/>
+<h6 id="nbsp-nbsp-nbsp-10-停止开机启动"><a href="#nbsp-nbsp-nbsp-10-停止开机启动" class="headerlink" title="&nbsp;&nbsp;&nbsp;10.停止开机启动"></a><strong>&nbsp;&nbsp;&nbsp;10.停止开机启动</strong></h6><br/>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;systemctl disable redis.service</p>
 <br/>
