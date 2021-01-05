@@ -26,7 +26,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/other/niuyue.jpg">
 <meta property="article:published_time" content="2020-12-30T03:00:02.000Z">
-<meta property="article:modified_time" content="2020-12-30T13:52:27.540Z">
+<meta property="article:modified_time" content="2021-01-04T13:03:44.903Z">
 <meta property="article:author" content="Edmonds">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -216,8 +216,34 @@
 <br/>
 
 <p><strong>6.清空文件</strong></p>
+<br/>
+
 <p>vim file<br/></p>
 <p>:%d</p>
+<br/>
+
+<p><strong>7.查找jdk路径</strong></p>
+<br/>
+
+<p>配置过JAVA_HOME可用echo $JAVA_HOME,反之如下</p>
+<br/>
+
+<p>[root@localhost ~]# which java</p>
+<br/>
+
+<p>/usr/bin/java</p>
+<br/>
+
+<p>[root@localhost ~]# ls -lrt /usr/bin/java</p>
+<br/>
+
+<p>lrwxrwxrwx. 1 root root 22 Aug 17 15:12 /usr/bin/java -&gt; /etc/alternatives/java</p>
+<br/>
+
+<p>[root@localhost ~]# ls -lrt /etc/alternatives/java</p>
+<br/>
+
+<p>lrwxrwxrwx. 1 root root 46 Aug 17 15:12 /etc/alternatives/java -&gt; /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java</p>
 <p><br/><br/></p>
 
         </div>
