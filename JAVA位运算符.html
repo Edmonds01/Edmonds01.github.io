@@ -15,22 +15,19 @@
   </script>
 
   
-  <title>Linux常用命令(持续更新) | Edmonds</title>
+  <title>JAVA位运算符 | Edmonds</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.Linux centos重启命令：  &amp;nbsp;&amp;nbsp;&amp;nbsp;1.reboot 立刻重启   &amp;nbsp;&amp;nbsp;&amp;nbsp;2.shutdown -r now 立刻重启(root用户使用)   &amp;nbsp;&amp;nbsp;&amp;nbsp;3.shutdown -r 10 过10分钟自动重启(root用户使用)   &amp;nbsp;&amp;nbsp;&amp;nbsp;4.shutdown -r 20">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Linux常用命令(持续更新)">
-<meta property="og:url" content="http://example.com/2020/12/30/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+  <meta name="description" content="1.计算机存储&amp;nbsp;原码,反码,补码是机器存储一个具体数字的编码方式 &amp;nbsp;&amp;nbsp;1.原码： &amp;nbsp;&amp;nbsp;&amp;nbsp;原码是指将最高位作为符号位(0表示正，1表示负)，其它数字位代表数值本身的绝对值的数字表示方式。 &amp;nbsp;&amp;nbsp;&amp;nbsp;例如：数字6 在计算机中原码表示为：0 000 0110 &amp;nbsp;&amp;nbsp;&amp;nbsp;其中，第一个数字0是符号">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JAVA位运算符">
+<meta property="og:url" content="http://example.com/JAVA%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6.html">
 <meta property="og:site_name" content="Edmonds">
-<meta property="og:description" content="1.Linux centos重启命令：  &amp;nbsp;&amp;nbsp;&amp;nbsp;1.reboot 立刻重启   &amp;nbsp;&amp;nbsp;&amp;nbsp;2.shutdown -r now 立刻重启(root用户使用)   &amp;nbsp;&amp;nbsp;&amp;nbsp;3.shutdown -r 10 过10分钟自动重启(root用户使用)   &amp;nbsp;&amp;nbsp;&amp;nbsp;4.shutdown -r 20">
+<meta property="og:description" content="1.计算机存储&amp;nbsp;原码,反码,补码是机器存储一个具体数字的编码方式 &amp;nbsp;&amp;nbsp;1.原码： &amp;nbsp;&amp;nbsp;&amp;nbsp;原码是指将最高位作为符号位(0表示正，1表示负)，其它数字位代表数值本身的绝对值的数字表示方式。 &amp;nbsp;&amp;nbsp;&amp;nbsp;例如：数字6 在计算机中原码表示为：0 000 0110 &amp;nbsp;&amp;nbsp;&amp;nbsp;其中，第一个数字0是符号">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/other/niuyue.jpg">
-<meta property="article:published_time" content="2020-12-30T03:00:02.000Z">
-<meta property="article:modified_time" content="2021-01-13T09:27:59.804Z">
+<meta property="article:published_time" content="2021-01-13T06:23:30.000Z">
+<meta property="article:modified_time" content="2021-01-13T09:03:35.943Z">
 <meta property="article:author" content="Edmonds">
-<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/other/niuyue.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Edmonds" type="application/atom+xml">
   
@@ -110,8 +107,7 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <!--博文页面-->
-
+          <!--翻页-->
 <style>
     .header-box {
         height: 370px;
@@ -151,126 +147,69 @@
     <div class="container post-box">
         <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
             <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
-                <strong>Linux常用命令(持续更新)</strong>
+                <strong>JAVA位运算符</strong>
             </h1>
             
             <div class="is-flex align-center">
                 <img class="post-avatar" src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/55c66775e004e09321e8e30d20d94b73_1.jpg">
                 <span style="padding:0 10px;"> <span class="sub-title">By</span> Edmonds</span>
-                <span class="post-date sub-title">at: 2020-12-30</span>
+                <span class="post-date sub-title">at: 2021-01-13</span>
             </div>
-            
-                <div>
-                    
-                         <a class="tag is-post-tag" href="/tags/Linux/">Linux</a>
-                    
-                </div>
             
         </div>
         <div class="content" style="overflow: auto">
-            <p><img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/other/niuyue.jpg" alt="post-cover"></p>
-<h5 id="1-Linux-centos重启命令："><a href="#1-Linux-centos重启命令：" class="headerlink" title="1.Linux centos重启命令："></a><strong>1.Linux centos重启命令：</strong></h5><br/>
-
-<p>&nbsp;&nbsp;&nbsp;1.reboot 立刻重启</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;2.shutdown -r now 立刻重启(root用户使用)</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;3.shutdown -r 10 过10分钟自动重启(root用户使用)</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;4.shutdown -r 20:35 在时间为20:35时候重启(root用户使用)</p>
-<br/>
-
-<p>　　如果是通过shutdown命令设置重启的话，可以用shutdown -c命令取消重启</p>
-<br/>
-
-<h5 id="2-Linux-centos关机命令："><a href="#2-Linux-centos关机命令：" class="headerlink" title="2.Linux centos关机命令："></a><strong>2.Linux centos关机命令：</strong></h5><br/>
-
-<p>&nbsp;&nbsp;&nbsp;1.halt 立刻关机</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;2.poweroff 立刻关机</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;3.shutdown -h now 立刻关机(root用户使用)</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;4.shutdown -h 10 10分钟后自动关机</p>
-<br/>
-
-<h5 id="3-查看CentOS版本"><a href="#3-查看CentOS版本" class="headerlink" title="3.查看CentOS版本"></a><strong>3.查看CentOS版本</strong></h5><br/>
-
-<p>&nbsp;&nbsp;&nbsp;cat /etc/redhat-release </p>
-<br/>
-
-<h5 id="4-查看Linux版本信息"><a href="#4-查看Linux版本信息" class="headerlink" title="4.查看Linux版本信息"></a><strong>4.查看Linux版本信息</strong></h5><br/>
-
-<p>&nbsp;&nbsp;&nbsp;cat /proc/version OR uname -a</p>
-<br/>
-
-<h5 id="5-查找文件地址"><a href="#5-查找文件地址" class="headerlink" title="5.查找文件地址"></a><strong>5.查找文件地址</strong></h5><br/>
-
-<p>&nbsp;&nbsp;&nbsp;find / -name redis-server</p>
-<br/>
-
-<p><strong>6.清空文件</strong></p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;vim file<br/></p>
-<p>&nbsp;&nbsp;&nbsp;:%d</p>
-<br/>
-
-<p><strong>7.查找jdk路径</strong></p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;配置过JAVA_HOME可用echo $JAVA_HOME,反之如下</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;[root@localhost ~]# which java</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;/usr/bin/java</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;[root@localhost ~]# ls -lrt /usr/bin/java</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;lrwxrwxrwx. 1 root root 22 Aug 17 15:12 /usr/bin/java -&gt; /etc/alternatives/java</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;[root@localhost ~]# ls -lrt /etc/alternatives/java</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;lrwxrwxrwx. 1 root root 46 Aug 17 15:12 /etc/alternatives/java -&gt; /usr/lib/jvm/jre-1.7.0</p>
-<p>&nbsp;&nbsp;&nbsp;openjdk.x86_64/bin/java</p>
-<br/>
-
-<p><strong>8.文件打开编辑中突然关闭解决</strong></p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;然后输入ls -a 查找全部隐藏文件</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;发现多了个swp的文件</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;使用命令rm -rf .nginx.conf.swp 进行删除</p>
-<p><strong>9.根据端口号找到进程</strong></p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;ps aux|grep 9000</p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;netstat -lnp|grep 9000(最后那个是进程号)</p>
-<br/>
-
-<p><strong>10.查找文件关键字及其上下各 10 行</strong></p>
-<br/>
-
-<p>&nbsp;&nbsp;&nbsp;grep 关键词 -B 10 -A 10 文件 | tee r.txt</p>
-<p><br/><br/></p>
+            <h5 id="1-计算机存储"><a href="#1-计算机存储" class="headerlink" title="1.计算机存储"></a><strong>1.计算机存储</strong></h5><p>&nbsp;原码,反码,补码是机器存储一个具体数字的编码方式</p>
+<p>&nbsp;&nbsp;1.原码：</p>
+<p>&nbsp;&nbsp;&nbsp;原码是指将最高位作为符号位(0表示正，1表示负)，其它数字位代表数值本身的绝对值的数字表示方式。</p>
+<p>&nbsp;&nbsp;&nbsp;例如：数字6 在计算机中原码表示为：0 000 0110</p>
+<p>&nbsp;&nbsp;&nbsp;其中，第一个数字0是符号位，0表示正数，0 000110是数字6的二进制数据表示。</p>
+<p>&nbsp;&nbsp;&nbsp;数字－6 在计算机中原码表示为：1 000 0110</p>
+<p>&nbsp;&nbsp;&nbsp;以上是在8位计算机中的原码表示，如果在32位或16位计算机中，表示方法也是一样的，只是多了几个数字0而已。</p>
+<p>　　例如，在32位 计算机中数字6 的原码表示为：00000000 0000 0000 0000 0000 0000 0110</p>
+<p>　　在16位 计算机中数字6 的原码表示为：00000000 0000 0110</p>
+<p>②  反码：</p>
+<p>　　反码表示规则为：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p>
+<p>　　例如，数字6 在8位 计算机中的反码就是它的原码：00000110</p>
+<p>　　数字－6 在 8位计算机中的反码为：11111001</p>
+<p>③  补码</p>
+<p>　　补码是计算机表示数据的一般方式，其规则为：如果是正数，则表示方法和原码一样；如果是负数，则将数字的反码加上1。</p>
+<p>　　例如：数字6 在8位 计算机中的补码就是它的原码：00000110</p>
+<p>  数字－6 在8 位 计算机中的补码为：1111 1010</p>
+<p>2.左移( &lt;&lt; )</p>
+<p>package com.xcy;</p>
+<p>public class Test {<br>    public static void main(String[] args) {<br>        System.out.println(5&lt;&lt;2);//运行结果是20<br>    }<br>}</p>
+<p>0000 0101</p>
+<p>0001 0100</p>
+<p>3.右移( &gt;&gt; ) 上面取反</p>
+<p>System.out.println(5&gt;&gt;2);//运行结果是1</p>
+<p>0000 0101</p>
+<p>0000 0001</p>
+<p>4.无符号右移( &gt;&gt;&gt; )</p>
+<p>我们知道在Java中int类型占32位，可以表示一个正数，也可以表示一个负数。正数换算成二进制后的最高位为0，负数的二进制最高为为1</p>
+<p>例如  -5换算成二进制后为：</p>
+<p>1111 1111 1111 1111 1111 1111 1111 1011  (刚开始接触二进制时，不知道最高位是用来表示正负之分的，当时就总想不通。。明明算起来得到的就是一个正数-_-)</p>
+<p>我们分别对5进行右移3位、 -5进行右移3位和无符号右移3位：</p>
+<p>package com.xcy;</p>
+<p>public class Test {<br>    public static void main(String[] args) {<br>        System.out.println(5&gt;&gt;3);//结果是0<br>        System.out.println(-5&gt;&gt;3);//结果是-1<br>        System.out.println(-5&gt;&gt;&gt;3);//结果是536870911<br>    }<br>}</p>
+<p>5.位与( &amp; )</p>
+<p>package com.xcy;</p>
+<p>public class Test {<br>    public static void main(String[] args) {<br>        System.out.println(129 &amp;128);//结果为128<br>    }<br>}</p>
+<p>两个为1结果才是1,否则是0</p>
+<p>10000001</p>
+<p>10000000</p>
+<p>10000000</p>
+<p>6.位异或( ^ )</p>
+<p>package com.xcy;</p>
+<p>public class Test {<br>    public static void main(String[] args) {<br>        System.out.println(129 ^ 128);//结果为1<br>    }<br>}</p>
+<p>只有两个位有一个是1，结果才是1,否则0</p>
+<p>10000001</p>
+<p>10000000</p>
+<p>10000001</p>
+<p>7.位非( ~ ) </p>
+<p>package com.xcy;</p>
+<p>public class Test {<br>    public static void main(String[] args) {<br>        System.out.println(~128);//结果为-129<br>    }</p>
+<p>}</p>
+<p>1为0,0为1</p>
 
         </div>
         <div class="post-reply">
