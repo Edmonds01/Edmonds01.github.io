@@ -17,20 +17,20 @@
   
   <title>Lambda学习 | Edmonds</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在不用就落后了123456789101112131415161718192021&#x2F;&#x2F;声明List&lt;String&gt; names &#x3D; Arrays.asList(&quot;edmonds&quot;, &quot;aruis&quot;, &quot;beason&quot;, &quot;chris&quot;);List&lt;String&gt; stringCollection">
+  <meta name="description" content="在不用就落后了  &#x2F;&#x2F;声明List names &#x3D; Arrays.asList(“edmonds”, “aruis”, “beason”, “chris”);   List stringCollection &#x3D; new ArrayList&lt;&gt;();stringCollection.add(“abc”);stringCollection.add(“ace”);stringCollecti">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lambda学习">
-<meta property="og:url" content="http://example.com/2021/01/19/Lambda%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:url" content="http://example.com/2021/01/20/Lambda%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Edmonds">
-<meta property="og:description" content="在不用就落后了123456789101112131415161718192021&#x2F;&#x2F;声明List&lt;String&gt; names &#x3D; Arrays.asList(&quot;edmonds&quot;, &quot;aruis&quot;, &quot;beason&quot;, &quot;chris&quot;);List&lt;String&gt; stringCollection">
+<meta property="og:description" content="在不用就落后了  &#x2F;&#x2F;声明List names &#x3D; Arrays.asList(“edmonds”, “aruis”, “beason”, “chris”);   List stringCollection &#x3D; new ArrayList&lt;&gt;();stringCollection.add(“abc”);stringCollection.add(“ace”);stringCollecti">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/store/1.jpg">
-<meta property="article:published_time" content="2021-01-19T13:01:17.000Z">
-<meta property="article:modified_time" content="2021-01-20T04:23:54.203Z">
+<meta property="og:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/8.jpg">
+<meta property="article:published_time" content="2021-01-20T04:28:07.000Z">
+<meta property="article:modified_time" content="2021-01-20T04:35:03.582Z">
 <meta property="article:author" content="Edmonds">
 <meta property="article:tag" content="WEB">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/store/1.jpg">
+<meta name="twitter:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/8.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Edmonds" type="application/atom+xml">
   
@@ -157,7 +157,7 @@
             <div class="is-flex align-center">
                 <img class="post-avatar" src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/55c66775e004e09321e8e30d20d94b73_1.jpg">
                 <span style="padding:0 10px;"> <span class="sub-title">By</span> Edmonds</span>
-                <span class="post-date sub-title">at: 2021-01-19</span>
+                <span class="post-date sub-title">at: 2021-01-20</span>
             </div>
             
                 <div>
@@ -168,51 +168,72 @@
             
         </div>
         <div class="content" style="overflow: auto">
-            <h5 id="在不用就落后了"><a href="#在不用就落后了" class="headerlink" title="在不用就落后了"></a><strong>在不用就落后了</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明</span></span><br><span class="line">List&lt;String&gt; names = Arrays.asList(<span class="string">&quot;edmonds&quot;</span>, <span class="string">&quot;aruis&quot;</span>, <span class="string">&quot;beason&quot;</span>, <span class="string">&quot;chris&quot;</span>);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; stringCollection = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">stringCollection.add(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">stringCollection.add(<span class="string">&quot;ace&quot;</span>);</span><br><span class="line">stringCollection.add(<span class="string">&quot;mvp&quot;</span>);</span><br><span class="line"></span><br><span class="line">List&lt;User&gt; userList=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">User user1=<span class="keyword">new</span> User();</span><br><span class="line">user1.setPhone(<span class="string">&quot;15853722917&quot;</span>);</span><br><span class="line">user1.setRegisterBy(<span class="number">1</span>);</span><br><span class="line">User user2=<span class="keyword">new</span> User();</span><br><span class="line">user2.setPhone(<span class="string">&quot;15853722917&quot;</span>);</span><br><span class="line">user2.setRegisterBy(<span class="number">2</span>);</span><br><span class="line">userList.add(user1);</span><br><span class="line">userList.add(user2);</span><br><span class="line"></span><br><span class="line">Map&lt;String,Object&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">map.put(<span class="string">&quot;a&quot;</span>,<span class="number">1</span>);</span><br><span class="line">map.put(<span class="string">&quot;b&quot;</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+            <h5 id="在不用就落后了"><a href="#在不用就落后了" class="headerlink" title="在不用就落后了"></a><strong>在不用就落后了</strong></h5><br/>
+
+<h5 id="声明"><a href="#声明" class="headerlink" title="//声明"></a><strong>//声明</strong></h5><p>List<String> names = Arrays.asList(“edmonds”, “aruis”, “beason”, “chris”);</p>
+<br/>
+
+<p>List<String> stringCollection = new ArrayList&lt;&gt;();<br>stringCollection.add(“abc”);<br>stringCollection.add(“ace”);<br>stringCollection.add(“mvp”);</p>
+<br/>
+
+<p>List<User> userList=new ArrayList&lt;&gt;();<br>User user1=new User();<br>user1.setPhone(“15853722917”);<br>user1.setRegisterBy(1);<br>User user2=new User();<br>user2.setPhone(“15853722917”);<br>user2.setRegisterBy(2);<br>userList.add(user1);<br>userList.add(user2);</p>
+<br/>
+
+<p>Map&lt;String,Object&gt; map=new HashMap&lt;&gt;();<br>map.put(“a”,1);<br>map.put(“b”,2);</p>
+<h5 id="1-sort排序"><a href="#1-sort排序" class="headerlink" title="1.sort排序"></a><strong>1.sort排序</strong></h5><br/>
+
+<p>Collections.sort(names,(a,b)-&gt;b.compareTo(a));</p>
+<br/>
+
+<p>stringCollection<br>        .stream()<br>        .map(String::toUpperCase)<br>        .sorted((a, b) -&gt; b.compareTo(a))<br>        .forEach(System.out::println);</p>
+<br/>
+
+<p><strong>2.stream,filter(循环和遍历)</strong></p>
+<br/>
+
+<p>stringCollection.stream().filter(s-&gt;s.startsWith(“a”)).collect(Collectors.toList());</p>
+<p><br/>stringCollection.stream().filter(s-&gt;s.startsWith(“a”)).forEach(System.out::println);</p>
+<p><br/>stringCollection.forEach(s-&gt;{<br>   //业务处理<br>});</p>
+<br/>
+
+<p><strong>3.::循环取出属性</strong></p>
+<br/>
+
+<p>userList.stream().map(User::getPhone).distinct().collect(Collectors.toList());</p>
+<p><br/>names.stream().map(String::length).distinct().collect(Collectors.toList());</p>
+<br/>
+
+<p><strong>4.sum求和</strong></p>
+<br/>
+
+<p>userList.stream().map(User::getRegisterBy).mapToDouble(Integer::doubleValue).sum();</p>
+<br/>
+
+<p><strong>5.Match是否包含</strong></p>
+<br/>
+
+<p>boolean a = stringCollection.stream().anyMatch(s -&gt; s.startsWith(“a”));//包含一个</p>
+<p><br/>boolean b = stringCollection.stream().allMatch(s -&gt; s.startsWith(“a”));//全部都是</p>
+<p><br/>boolean c = stringCollection.stream().noneMatch(s -&gt; s.startsWith(“a”));//没有一个</p>
+<br/>
+
+<p><strong>6.count计数</strong></p>
+<br/>
+
+<p>long startsWithB =<br>        stringCollection<br>                .stream()<br>                .filter((s) -&gt; s.startsWith(“b”))<br>                .count();</p>
+<br/>
+
+<p><strong>7.map遍历</strong></p>
+<br/>
+
+<p>map.forEach((id, val) -&gt; System.out.println(id+”,”+val));</p>
+<p><br/>map.forEach((id, val) -&gt; {</p>
+<p>});</p>
+<br/>
 
 <br/>
 
-<h5 id="1-sort排序"><a href="#1-sort排序" class="headerlink" title="1.sort排序"></a><strong>1.sort排序</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(names,(a,b)-&gt;b.compareTo(a));</span><br><span class="line"></span><br><span class="line">stringCollection</span><br><span class="line">        .stream()</span><br><span class="line">        .map(String::toUpperCase)</span><br><span class="line">        .sorted((a, b) -&gt; b.compareTo(a))</span><br><span class="line">        .forEach(System.out::println);</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-
-
-<h5 id="2-stream-filter-循环和遍历"><a href="#2-stream-filter-循环和遍历" class="headerlink" title="2.stream,filter(循环和遍历)"></a><strong>2.stream,filter(循环和遍历)</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stringCollection.stream().filter(s-&gt;s.startsWith(<span class="string">&quot;a&quot;</span>)).collect(Collectors.toList());</span><br><span class="line">stringCollection.stream().filter(s-&gt;s.startsWith(<span class="string">&quot;a&quot;</span>)).forEach(System.out::println);</span><br><span class="line">stringCollection.forEach(s-&gt;&#123;</span><br><span class="line">   <span class="comment">//业务处理</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-
-
-<h5 id="3-循环取出属性"><a href="#3-循环取出属性" class="headerlink" title="3.::循环取出属性"></a><strong>3.::循环取出属性</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">userList.stream().map(User::getPhone).distinct().collect(Collectors.toList());</span><br><span class="line">names.stream().map(String::length).distinct().collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-
-
-<h5 id="4-sum求和"><a href="#4-sum求和" class="headerlink" title="4.sum求和"></a><strong>4.sum求和</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userList.stream().map(User::getRegisterBy).mapToDouble(Integer::doubleValue).sum();</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h5 id="5-Match是否包含"><a href="#5-Match是否包含" class="headerlink" title="5.Match是否包含"></a><strong>5.Match是否包含</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> a = stringCollection.stream().anyMatch(s -&gt; s.startsWith(<span class="string">&quot;a&quot;</span>));<span class="comment">//包含一个</span></span><br><span class="line"><span class="keyword">boolean</span> b = stringCollection.stream().allMatch(s -&gt; s.startsWith(<span class="string">&quot;a&quot;</span>));<span class="comment">//全部都是</span></span><br><span class="line"><span class="keyword">boolean</span> c = stringCollection.stream().noneMatch(s -&gt; s.startsWith(<span class="string">&quot;a&quot;</span>));<span class="comment">//没有一个</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
-
-
-<h5 id="6-count计数"><a href="#6-count计数" class="headerlink" title="6.count计数"></a><strong>6.count计数</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> startsWithB =</span><br><span class="line">        stringCollection</span><br><span class="line">                .stream()</span><br><span class="line">                .filter((s) -&gt; s.startsWith(<span class="string">&quot;b&quot;</span>))</span><br><span class="line">                .count();</span><br></pre></td></tr></table></figure>
-
-<p><strong><br/></strong></p>
-<h5 id="7-map遍历"><a href="#7-map遍历" class="headerlink" title="7.map遍历"></a><strong>7.map遍历</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">map.forEach((id, val) -&gt; System.out.println(id+<span class="string">&quot;,&quot;</span>+val));</span><br><span class="line">map.forEach((id, val) -&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong><br/></strong></p>
-<br/>
-
-
-
-
-
-<p><img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/store/1.jpg" alt="post-cover"></p>
+<p><img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/8.jpg" alt="post-cover"></p>
 
         </div>
         <div class="post-reply">
