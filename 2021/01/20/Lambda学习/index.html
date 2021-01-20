@@ -26,7 +26,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/8.jpg">
 <meta property="article:published_time" content="2021-01-20T04:28:07.000Z">
-<meta property="article:modified_time" content="2021-01-20T04:35:03.582Z">
+<meta property="article:modified_time" content="2021-01-20T04:39:56.224Z">
 <meta property="article:author" content="Edmonds">
 <meta property="article:tag" content="WEB">
 <meta name="twitter:card" content="summary">
@@ -185,7 +185,7 @@
 <p>Collections.sort(names,(a,b)-&gt;b.compareTo(a));</p>
 <br/>
 
-<p>stringCollection<br>        .stream()<br>        .map(String::toUpperCase)<br>        .sorted((a, b) -&gt; b.compareTo(a))<br>        .forEach(System.out::println);</p>
+<p>stringCollection.stream().map(String::toUpperCase).sorted((a, b) -&gt; b.compareTo(a)).forEach(System.out::println);</p>
 <br/>
 
 <p><strong>2.stream,filter(循环和遍历)</strong></p>
@@ -220,7 +220,7 @@
 <p><strong>6.count计数</strong></p>
 <br/>
 
-<p>long startsWithB =<br>        stringCollection<br>                .stream()<br>                .filter((s) -&gt; s.startsWith(“b”))<br>                .count();</p>
+<p>stringCollection.stream().filter((s) -&gt; s.startsWith(“b”)).count();</p>
 <br/>
 
 <p><strong>7.map遍历</strong></p>
