@@ -104,13 +104,15 @@
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
            <script type="text/javascript">
-    $("#footer").find("[class=top-line]").css("border-top","black");
-     $("#footer").find(".fa.fa-twitter.fa-stack-1x.fa-inverse").css("background-color","black");
-     $("#footer").find(".fa.fa-telegram.fa-stack-1x.fa-inverse").css("background-color","black");
-     $("#footer").find(".fa.fa-weibo.fa-stack-1x.fa-inverse").css("background-color","black");
-     $("#footer").find(".fa.fa-github.fa-stack-1x.fa-inverse").css("background-color","black");
      var head = document.getElementsByTagName('head')[0];
      head.innerHTML += ' <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/> ';
+    $(function(){
+        $("#footer").find("[class=top-line]").css("border-top","black");
+         $("#footer").find(".fa.fa-twitter.fa-stack-1x.fa-inverse").css("background-color","black");
+         $("#footer").find(".fa.fa-telegram.fa-stack-1x.fa-inverse").css("background-color","black");
+         $("#footer").find(".fa.fa-weibo.fa-stack-1x.fa-inverse").css("background-color","black");
+         $("#footer").find(".fa.fa-github.fa-stack-1x.fa-inverse").css("background-color","black");
+    };
 </script>
 <style>
     .post-hover:hover {
