@@ -207,6 +207,9 @@
         </div>
         <div class="post-reply">
             <div id="vcomments"></div>
+            <div>
+              <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/other/DOGE.png" style="width: 180px;margin-left: 480px;">
+            </div>
             <script>
                 new Valine({
                     el: '#vcomments',
@@ -228,6 +231,7 @@
         var header_box = document.querySelector('#header_box')
         header_box.style.backgroundImage = 'url('+ img.src +')'
     }
+    $("[class=vempty]").remove();
 </script>
 
 <!-- for code block highlight --> 
