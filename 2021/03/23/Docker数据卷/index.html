@@ -15,15 +15,22 @@
   </script>
 
   
-  <title>Category: code | Edmonds</title>
+  <title>Docker数据卷 | Edmonds</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Edmonds">
-<meta property="og:url" content="http://example.com/categories/code/index.html">
+  <meta name="description" content="1.Volume   由 Docker 管理的数据卷,是宿主机文件系统的一部分(&#x2F;var&#x2F;lib&#x2F;docker&#x2F;volumes),是保存数据的最佳方式   12345678910111213141516171819202122232425创建数据卷	docker volume create &lt;volume_name&gt;查看数据卷列表	docker volume ls查看数据卷详细信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker数据卷">
+<meta property="og:url" content="http://example.com/2021/03/23/Docker%E6%95%B0%E6%8D%AE%E5%8D%B7/index.html">
 <meta property="og:site_name" content="Edmonds">
+<meta property="og:description" content="1.Volume   由 Docker 管理的数据卷,是宿主机文件系统的一部分(&#x2F;var&#x2F;lib&#x2F;docker&#x2F;volumes),是保存数据的最佳方式   12345678910111213141516171819202122232425创建数据卷	docker volume create &lt;volume_name&gt;查看数据卷列表	docker volume ls查看数据卷详细信">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/store/beijing.jpg">
+<meta property="article:published_time" content="2021-03-23T02:12:33.000Z">
+<meta property="article:modified_time" content="2021-03-23T08:40:47.918Z">
 <meta property="article:author" content="Edmonds">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/store/beijing.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Edmonds" type="application/atom+xml">
   
@@ -103,304 +110,133 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .container.tag-cate-wrap {
-        min-height: 93vh;
+          <!--博文页面-->
+
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .category-title-inner {
-        padding-top: 50px;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    strong {
-        text-transform: capitalize;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
     }
 </style>
+<header>
+    <div id="header_box" class="header-box" style="background-size: 100% 100%;background-repeat: no-repeat;"></div>
+</header>
+      <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>Docker数据卷</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/55c66775e004e09321e8e30d20d94b73_1.jpg">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Edmonds</span>
+                <span class="post-date sub-title">at: 2021-03-23</span>
+            </div>
+            
+                <div>
+                    
+                         <a class="tag is-post-tag" href="/tags/Linux/">Linux</a>
+                    
+                </div>
+            
+        </div>
+        <div class="content" style="overflow: auto">
+            <p><img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/store/beijing.jpg" alt="post-cover"></p>
+<br>
+
+<p>1.Volume</p>
+<br>
+
+<p>由 Docker 管理的数据卷,是宿主机文件系统的一部分(/var/lib/docker/volumes),是保存数据的最佳方式</p>
+<br>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">创建数据卷</span><br><span class="line"></span><br><span class="line">	docker volume create &lt;volume_name&gt;</span><br><span class="line"></span><br><span class="line">查看数据卷列表</span><br><span class="line"></span><br><span class="line">	docker volume ls</span><br><span class="line"></span><br><span class="line">查看数据卷详细信息</span><br><span class="line"></span><br><span class="line">	docker volume inspect &lt;volume_name&gt;</span><br><span class="line">	</span><br><span class="line">	创建的数据卷默认在宿主机的 /var/lib/docker/volumes/ 下</span><br><span class="line">	</span><br><span class="line">删除数据卷</span><br><span class="line">	</span><br><span class="line">	docker volume rm &lt;volume_name&gt;</span><br><span class="line"></span><br><span class="line">创建容器时指定数据卷</span><br><span class="line"></span><br><span class="line">docker run -d --name &lt;指定容器的名字&gt; --mount src=&lt;数据卷名称&gt;,dst=&lt;容器内的数据目录&gt; &lt;IMAGE ID&gt;</span><br><span class="line"></span><br><span class="line">OR</span><br><span class="line"></span><br><span class="line">docker run -d --name &lt;指定容器的名字&gt; -v &lt;数据卷名称&gt;:&lt;容器内的数据目录&gt; &lt;IMAGE ID&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>2.Bind Mounts</p>
+<br>
+
+<p>将宿主机上的文件或目录挂载到容器中,通常在容器需要使用宿主机上的目录或文件时使用,比如搜集宿主机的信息,挂载宿主机上的 maven 仓库等</p>
+<br>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker run -d --name &lt;指定容器的名字&gt; --mount type=bind,src=&lt;宿主机目录&gt;,dst=&lt;容器内的数据目录&gt; &lt;IMAGE ID&gt;</span><br><span class="line"></span><br><span class="line">docker run -d --name &lt;指定容器的名字&gt; -v /data/nginx/html:/usr/share/nginx/html &lt;IMAGE ID&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>一定要在容器关闭状态下进行删除数据卷</p>
+<br>
+
+<br>
 
 
-<div class="container tag-cate-wrap">
-    <div class="category-title-inner content has-text-centered">
-        <h1><strong style="border-top: 2px solid; border-bottom: 2px solid;">category·code</strong></h1>
+        </div>
+        <div class="post-reply">
+            <div id="vcomments"></div>
+                <center>
+                    <div>
+                      <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/other/DOGE.png" style="width: 180px;">
+                    </div>
+                </center>
+            <script>
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'WXdnbmPiuqhI8Tt6f19YuLXv-gzGzoHsz',
+                    appKey: 'nTmXrs6jzYUdl25MaUBRbUjv',
+                    avatar: ''
+                })
+            </script>
+            
+            
+        </div>
     </div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
 
-    
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2021/03/23/Docker数据卷/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/store/beijing.jpg" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Docker数据卷</strong> <small class="post-date">at: 2021-03-23</small>
-                                <br>
-                                
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+    $("[class=vempty]").remove();
+</script>
 
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
 
-1.Volume
+<link rel="stylesheet" href="/css/highlight_rainbow.css">
 
-
-由 Docker 管理的数据卷,是宿主机文件系统的一部分(/var/lib/docker/volumes),是保存数据的最佳方式
-
-
-12345678910111213141516171819202122232425创建数据卷	docker volume create &lt;volume_name&gt;查看数据卷列表	do..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2021/03/22/Docker容器/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/fss.jpg" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Docker容器</strong> <small class="post-date">at: 2021-03-22</small>
-                                <br>
-                                
-1.创建容器
-
-
-1234567891011121314151617181920212223242526272829303132333435363738394041docker run &lt;IMAGE ID OR REPOSITORY&gt; ORdocker container run &lt;IMAGE ID OR REPOSITORY&gt;..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2021/03/18/Docker镜像/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/content/docker/hxm.png" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Docker镜像</strong> <small class="post-date">at: 2021-03-18</small>
-                                <br>
-                                
-1.验证是否安装成功
-123docker -vdocker info
-
-
-
-2.Docker 服务管理
-123456789service docker start 		启动服务service docker stop 		关闭服务service docker restart   	重启服务service docker status  		服务状态syst..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2021/02/03/Docker入门/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/tokyo.jpg" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Docker入门</strong> <small class="post-date">at: 2021-02-03</small>
-                                <br>
-                                1、更快速的交付和部署
-
-
-对开发和运维（devop）人员来说，最希望的就是一次创建或配置，可以在任意地方正常运行。
-
-
-开发者可以使用一个标准的镜像来构建一套开发容器，开发完成之后，运维人员可以直接使用这个容器来部署代码。 Docker 可以快速创建容器，快速迭代应用程序，并让整个过程全程可见，使团队中的其他成员更容易理解应用程序是如何创建和工作的。 ..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2021/01/21/Git笔记/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/10.jpg" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Git笔记</strong> <small class="post-date">at: 2021-01-21</small>
-                                <br>
-                                1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2021/01/20/Lambda学习/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/8.jpg" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Lambda学习</strong> <small class="post-date">at: 2021-01-20</small>
-                                <br>
-                                在不用就落后了
-
-
-
-声明List names = Arrays.asList(“edmonds”, “aruis”, “beason”, “chris”);
-
-
-List stringCollection = new ArrayList&lt;&gt;();stringCollection.add(“abc”);stringCollection.add..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2020/12/28/Redis数据类型/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/1.jpg" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Redis安装下载</strong> <small class="post-date">at: 2020-12-28</small>
-                                <br>
-                                
-一.下载安装
-
-&nbsp;&nbsp;&nbsp;1.wget https://download.redis.io/releases/redis-6.0.9.tar.gz (https://redis.io/download 官网可以找到最新下载地址)
-
-
-&nbsp;&nbsp;&nbsp;2.tar xzf redis-6.0.9.tar.gz
-..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2020/12/16/Git设置代理/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/6.jpg" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Git设置代理</strong> <small class="post-date">at: 2020-12-16</small>
-                                <br>
-                                很多时候我们在使用github的时候会出现下载很慢的情况，如果你使用代理,会提高下载和上传速度
-克隆 repo 的两种方式：https 和 ssh 方式
-
-
-ssh 方式：git clone &#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2020/12/16/Linux防火墙-设置-开启-关闭/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/Japan/7.jpg" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Linux防火墙(设置)开启/关闭</strong> <small class="post-date">at: 2020-12-16</small>
-                                <br>
-                                在旧版本的CentOS中，是使用 iptables 命令来设置防火墙的。但是，从CentOS7开始，默认就没有安装iptables，而是改用firewall来配置防火墙。但iptalbes的一些命令仍然可以使用。 使用firewall-cmd命令添加规则,下面来说下firewall操作命令
-
-
-
-1.查看防火墙状态
-
-&nbsp;&nbsp;&nbsp;..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-</div>
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
       </div>
   </div>
   <style>
