@@ -26,7 +26,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://uploademonds.oss-cn-beijing.aliyuncs.com/image/store/beijing.jpg">
 <meta property="article:published_time" content="2021-03-23T02:12:33.000Z">
-<meta property="article:modified_time" content="2021-03-23T08:44:37.945Z">
+<meta property="article:modified_time" content="2021-03-23T08:47:48.217Z">
 <meta property="article:author" content="Edmonds">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -181,7 +181,7 @@
 <p>2.Bind Mounts(将宿主机上的文件或目录挂载到容器中,通常在容器需要使用宿主机上的目录或文件时使用,比如搜集宿主机的信息,挂载宿主机上的 maven 仓库等)</p>
 <br>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker run -d --name &lt;指定容器的名字&gt; --mount type=bind,src=&lt;宿主机目录&gt;,dst=&lt;容器内的数据目录&gt; &lt;IMAGE ID&gt;</span><br><span class="line"></span><br><span class="line">docker run -d --name &lt;指定容器的名字&gt; -v /data/nginx/html:/usr/share/nginx/html &lt;IMAGE ID&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker run -d --name &lt;指定容器的名字&gt; --mount type=bind,src=&lt;宿主机目录&gt;,dst=&lt;容器内的数据目录&gt; &lt;IMAGE ID&gt;</span><br><span class="line"></span><br><span class="line">docker run -d --name &lt;指定容器的名字&gt; -v &lt;宿主机目录&gt;:&lt;容器内的数据目录&gt; &lt;IMAGE ID&gt;</span><br></pre></td></tr></table></figure>
 
 <br>
 
